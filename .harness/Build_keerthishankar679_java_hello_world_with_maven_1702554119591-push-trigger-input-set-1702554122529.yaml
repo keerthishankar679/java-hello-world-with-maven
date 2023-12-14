@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_keerthishankar679_java_hello_world_with_maven_1702554119591-push-trigger-input-set
+  identifier: Build_keerthishankar679_java_hello_world_with_maven_1702554119591pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_keerthishankar679_java_hello_world_with_maven_1702554119591
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
