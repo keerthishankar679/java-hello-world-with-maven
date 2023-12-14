@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_keerthishankar679_java_hello_world_with_maven_1702549383409-pr-trigger-input-set
+  identifier: Build_keerthishankar679_java_hello_world_with_maven_1702549383409prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_keerthishankar679_java_hello_world_with_maven_1702549383409
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
