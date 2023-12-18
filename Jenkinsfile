@@ -1,16 +1,17 @@
 node {
     // Define the agent
-    stage('checkout') {
-        // Checkout code from Git
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github access', url: 'https://github.com/keerthishankar679/java-hello-world-with-maven.git']]])
+    stage('Checkout') {
+        // Checkout code from GitHub
+        git url: 'https://github.com/keerthishankar679/java-hello-world-with-maven.git', credentialsId: 'github access'
     }
 
-    stage('build') {
-        // Set up Maven and Java tools
+    stage('Build') {
+        // Set up Maven tool
         tool 'maven'
         tool 'java'
-
+        
         // Build the project using Maven
-        sh 'mvn install'
+        sh 'mvn clean package'
     }
 }
+
