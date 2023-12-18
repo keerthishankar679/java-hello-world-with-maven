@@ -11,6 +11,6 @@ node {
         tool 'java'
 
         // Build the project using Maven
-        sh 'mvn package'
+        sh 'mvn install'
     }
 }
