@@ -9,7 +9,7 @@ def loadClass(String className) {
 node {
 
     stage('Versioning') {
-        // Use Semantic Versioning plugin to determine the next version.
+        // Use Semantic Versioning plugin to determine the next version
         def version = script {
             def semver = new loadClass('io.jenkins.plugins.semver.SemanticVersion').newInstance()
             semver.incSemVer()
