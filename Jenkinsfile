@@ -12,5 +12,6 @@ node {
 
         // Build the project using Maven
         sh 'mvn clean install'
+        archiveArtifacts artifacts: 'target/*.jar'
     }
 }
