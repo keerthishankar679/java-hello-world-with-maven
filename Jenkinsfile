@@ -1,9 +1,17 @@
+import hudson.model.*
+import io.jenkins.plugins.semver.SemanticVersion
+
+@NonCPS
+def loadClass(String className) {
+    getClass().getClassLoader().loadClass(className)
+}
+
 node {
 
     stage('Versioning') {
         // Use Semantic Versioning plugin to determine the next version.
         def version = script {
-            def semver = getClass().getClassLoader().loadClass('io.jenkins.plugins.semver.SemanticVersion').newInstance()
+            def semver = new loadClass('io.jenkins.plugins.semver.SemanticVersion').newInstance()
             semver.incSemVer()
         }
         echo "Next version: ${version}"
